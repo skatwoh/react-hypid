@@ -1,8 +1,8 @@
 {
-  "homepage": "https://www.google.com/",
+  "homepage": "https://skatwoh.github.io/react-hypid",
   "name": "react-hypid",
   "sideEffects": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "build/index.js",
   "files": [
     "build"
