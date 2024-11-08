@@ -1,6 +1,6 @@
 import commonjs from "@rollup/plugin-commonjs";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import typescript from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript"; // Use the new plugin
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 
@@ -28,14 +28,14 @@ export default {
     "src/components/Select/TreeSelect/index.ts",
     // Tree component
     "src/components/Tree/index.ts",
-    // AdvacenFilter master components
+    // AdvanceFilter master components
     "src/components/AdvanceFilterMaster/AdvanceIdFilterMaster/index.ts",
     "src/components/AdvanceFilterMaster/AdvanceMultipleIdFilterMaster/index.ts",
     "src/components/AdvanceFilterMaster/AdvanceDateRangFilterMaster/index.ts",
     "src/components/AdvanceFilterMaster/AdvanceEnumFilterMaster/index.ts",
     "src/components/AdvanceFilterMaster/AdvanceTreeFilterMaster/index.ts",
     "src/components/AdvanceFilterMaster/TagFilter/index.ts",
-    // AdvacenFilter components
+    // AdvanceFilter components
     "src/components/AdvanceFilter/AdvanceIdFilter/index.ts",
     "src/components/AdvanceFilter/AdvanceIdMultipleFilter/index.ts",
     "src/components/AdvanceFilter/AdvanceEnumFilter/index.ts",
@@ -52,11 +52,11 @@ export default {
     "src/components/InlineLoading/index.ts",
     // InpageNavigation
     "src/components/InpageNavigation/index.ts",
-    //Modal/Drawer
+    // Modal/Drawer
     "src/components/Modal/NormalModal/index.ts",
     "src/components/Modal/TearSheet/index.ts",
     "src/components/Drawer/index.ts",
-    //UploadFile
+    // UploadFile
     "src/components/UploadFile/index.ts",
     "src/components/UploadImage/index.ts",
     // ProgressIndicator
@@ -93,18 +93,7 @@ export default {
     peerDepsExternal(),
     commonjs(),
     typescript({
-      typescript: require("ttypescript"),
-      tsconfigDefaults: {
-        compilerOptions: {
-          plugins: [
-            { transform: "typescript-transform-paths" },
-            {
-              transform: "typescript-transform-paths",
-              afterDeclarations: true,
-            },
-          ],
-        },
-      },
+      tsconfig: "./tsconfig.json",
     }),
     postcss({
       use: ["sass"],

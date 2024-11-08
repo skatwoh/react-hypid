@@ -1,7 +1,7 @@
-@import "./common/box-shadow";
-@import "./common/custom-antd";
-@import "./common/button";
-@import "./../../node_modules/react-image-crop/dist/ReactCrop";
+@use "common/box-shadow";
+@use "common/custom-antd";
+@use "common/button";
+@use "../../node_modules/react-image-crop/dist/ReactCrop";
 
 html {
   box-sizing: border-box;

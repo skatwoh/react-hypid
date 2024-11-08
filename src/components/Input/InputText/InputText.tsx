@@ -160,7 +160,7 @@ const InputText = React.forwardRef(
       if (internalValue) {
         const inputElm = inputRef.current;
         const divElm = divRef.current;
-        if (divElm.clientWidth >= inputElm.clientWidth) {
+        if (internalValue.length >= 0) {
           setIsShowToolTip(true);
         } else {
           setIsShowToolTip(false);
